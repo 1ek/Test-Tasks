@@ -1,3 +1,9 @@
+.body {
+  margin: 100px 50px;
+}
+
+/****************Menu****************/
+
 .nav {
   display: block;
   background: #cccccc;
@@ -13,6 +19,7 @@
 }
 
 .nav li {
+  list-style-type: none;
 }
 
 .nav li:hover {
@@ -79,35 +86,112 @@
   margin: 20px 0;
 }
 
-.age{
+.age {
   display: flex;
   flex-direction: column;
   margin: 20px 0;
 }
 
-.buttons{
+.buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.buttons input{
+.buttons input {
   background-color: #616161;
-  color: #CCCCCC;
+  color: #cccccc;
   border-style: none;
   padding: 10px;
   outline: none;
   border-radius: 5px;
 }
 
-.buttons input:hover{
+.buttons input:hover {
   cursor: pointer;
 }
 
-
 .buttons input:active {
   color: #616161;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 /*************Stepper*******************/
+
+.stepper {
+  margin-top: 100px;
+}
+
+.progressbar {
+  display: flex;
+  padding-left: 0;
+}
+
+.progressbar span {
+  display: block;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 12% 0 0 48%;
+  
+}
+
+.progressbar li {
+  list-style-type: none;
+  width: 250px;
+  height: 80px;
+  display: block;
+  position: relative;
+  margin-right: 10px;
+}
+.progressbar li:nth-child(n + 2)::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-left: 40px solid white;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  width: 0;
+  height: 0;
+  content: " ";
+}
+
+.progressbar li:last-child::after {
+  width: 0;
+  height: 0;
+}
+
+.progressbar li::after {
+  width: 56px;
+  height: 56px;
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: -28px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.progressbar li {
+  background: linear-gradient(180deg, #686868 0%, #b3b3b3 50.52%, #686868 100%);
+}
+
+.progressbar li::after {
+  background: linear-gradient(135deg, #686868 0%, #b3b3b3 50.52%, #686868 100%);
+}
+
+.progressbar li.active {
+  background: linear-gradient(180deg, #2ea239 0%, #62fd71 50.52%, #2ea139 100%);
+}
+
+.progressbar li.active::after {
+  background: linear-gradient(135deg, #2ea239 0%, #62fd71 50.52%, #2ea139 100%);
+}
+
+.active span{
+  text-shadow: 1px 1px 0 #000000, 
+  -1px -1px 0 #000000, 
+  1px -1px 0 #000000,
+    -1px 1px 0 #000000;
+}
